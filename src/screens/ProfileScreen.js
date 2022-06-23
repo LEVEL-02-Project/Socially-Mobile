@@ -14,6 +14,8 @@ const Profilescreen = ({ navigation }) => {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [amount,setAmount] = useState('')
+  const [disabled, setDisabled] = useState(false)
+
   useEffect(() => {
     getData()
   }, [])
@@ -37,7 +39,7 @@ const Profilescreen = ({ navigation }) => {
         'Authorization': `Bearer ${userToken}`
       }
     };
-
+   
     axios(config1)
       .then(function (response) {
         const data = JSON.stringify(response.data)
@@ -103,9 +105,11 @@ const Profilescreen = ({ navigation }) => {
         <Button
           mode="contained"
           uppercase={false}
-          // disabled={!loading}
+          disabled={amount<=10}
           labelStyle={styles.labelStyle}
-          onPress={() => navigation.navigate('Paymentsscreen')}
+          onPress={() => navigation.navigate('Paymentsscreen',{
+            amount:amount
+          })}
           // onPress={() => openPaymentSheet()}
         >
           Withdraw

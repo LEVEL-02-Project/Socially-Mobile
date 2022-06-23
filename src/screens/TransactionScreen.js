@@ -8,7 +8,6 @@ import * as SecureStore from 'expo-secure-store'
 
 const TransactionScreen = ({ navigation }) => {
   const [data, setData] = useState()
-
   const axios = require('axios')
   useEffect(() => {
     getData();
