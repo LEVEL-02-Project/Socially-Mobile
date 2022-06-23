@@ -27,7 +27,7 @@ export default function ViewAdsScreen({ navigation }) {
     // var data = JSON.stringify({
     //   "creativeId": "1"
     // });
-    const url = (`${API.host}share?creative_id=${encodeURIComponent(creativeId)}&user_id=${encodeURIComponent(userId)}&cookie_id=`)
+    const url = (`${API.host}share?creative_id=${encodeURIComponent(creativeId)}&user_id=${encodeURIComponent(userId)}`)
     // var config = {
     //   method: 'get',
     //   url,
