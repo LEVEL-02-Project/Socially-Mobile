@@ -15,9 +15,8 @@ export default function ViewAdsScreen({ navigation }) {
 
    const onShareAd = async(creativeId) =>{
 
-    let userToken,userId;
+    let userId;
       try{
-        userToken = await SecureStore.getItemAsync('userToken')
         userId = await SecureStore.getItemAsync('userId')
       }catch(e){
         console.log(e)
